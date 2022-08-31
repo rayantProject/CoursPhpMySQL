@@ -1,0 +1,50 @@
+.codeBlock {
+  display: block;
+  white-space: pre-wrap;
+  background-color: black;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.alert {
+  display: block;
+  background-color: #e76f51;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.note {
+  display: block;
+  color: white;
+  background-color: #264653;
+  padding: 25px;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=style.css.map */
+
+.important
+{
+  color: #0077b6;
+  font-style: italic;
+}
+
+.l-important
+{
+  color: #4361ee;
+  font-style: italic;
+}
+
+.m-important
+{
+  color: #3f37c9;
+  font-style: italic;
+  
+}
+
+.h-important
+{
+  color: #3a0ca3;
+  
+  text-decoration: solid;
+} 
