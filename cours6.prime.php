@@ -33,6 +33,97 @@
                 <kbd>array_search</kbd> pour récupérer la clé d'une valeur dans le tableau.
             </li>
         </ul>
+
+            <h3>Vérifiez si une clé existe dans un tableau avec <kbd>array_key_exists</kbd></h2>
+
+            <p class="text-break">
+                cette fonction va parcourir et verifier si la clé dans le tableau 
+                elle renvoie une <kbd>boolean</kbd>
+                en gros :
+            </p>
+            <p>
+                <code class="codeBlock">
+                &lsaquo;?php array_key_exists('cle', $array); ?>
+                </code> 
+            </p>
+
+            <p class="note text-break">     
+                La fonction renvoie <code>true</code> si la clé est trouvée et <code>false</code>
+                si non trouvée
+            </p>
+
+            <h3>
+            Vérifiez si une valeur existe dans un tableau avec <kbd>in_array</kbd>
+            </h3>
+
+            <p>
+            Le principe est le même que <kbd>array_key_exists</kbd> mais cette fois on recherche dans les valeurs. 
+            </p>
+            <p>
+                Exemple :
+                <code class="codeBlock">
+                &lsaquo;?php
+                    $users = [
+                        'Mathieu Nebra',
+                        'Mickaël Andrieu',
+                        'Laurène Castor',
+                    ];
+
+                    if (in_array('Mathieu Nebra', $users))
+                    {
+                        echo 'Mathieu fait bien partie des utilisateurs enregistrés !';
+                    }
+
+                    if (in_array('Arlette Chabot', $users))
+                    {
+                        echo 'Arlette fait bien partie des utilisateurs enregistrés !';
+                    }
+                </code>
+            </p>
+
+            <h3>
+            Récupérez la clé d'une valeur dans un tableau avec <kbd>array_search</kbd>
+            </h3>
+            <p>
+                <kbd>array_search</kbd> fonctionne comme <kbd>in_array</kbd> : il travaille sur les valeurs d'un tableau.
+            </p>
+
+            <ul class="note text-break" >
+            <p>Voici ce que renvoie la fonction :</p>
+            <li>
+                Si elle a trouvé la valeur, <kbd>array_search</kbd> renvoie la clé correspondante (dans le cas d'un tableau numéroté, la clé sera un numéro ; dans le cas d'un tableau associatif, la clé sera un nom).
+            </li>
+                <br>
+            <li>
+                Si elle n'a pas trouvé la valeur, <kbd>array_search</kbd> renvoie <code>false</code>  .
+            </li>
+
+            </ul>
+
+            <p>
+                <code class="codeBlock">
+                &lsaquo;?php
+                    $users = [
+                        'Mathieu Nebra',
+                        'Mickaël Andrieu',
+                        'Laurène Castor',
+                    ];
+
+                    $positionMathieu = array_search('Mathieu Nebra', $users);
+                    echo '"Mathieu" se trouve en position ' . $positionMathieu . PHP_EOL;
+
+                    $positionLaurène = array_search('Laurène Castor', $users);
+                    echo '"Laurène" se trouve en position ' . $positionLaurène . PHP_EOL;
+                </code>
+            </p>
+            <p>
+            resultat :
+            <pre>
+            $ php exemple.php 
+            "Mathieu" se trouve en position 0
+            "Laurène" se trouve en position 2
+            </pre>
+            </p>
     </div>
     </div>
 
