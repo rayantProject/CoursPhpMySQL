@@ -49,7 +49,7 @@
             </p>
 
             <code class="codeBlock">
-            &lsaquo;? echo(" Affiche le lien<code>&lsaquo;<a href=""></a>&rsaquo;</code>"); ?&rsaquo;
+            &lsaquo;?php echo(" Affiche le lien<code>&lsaquo;<a href=""></a>&rsaquo;</code>"); ?&rsaquo;
             </code>
 
 

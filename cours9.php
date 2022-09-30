@@ -12,12 +12,26 @@
 <main>
 
     <div class="container-fluid mx-auto" style="width: 80%;">
-    <h1>Notes :</h1>
+    <h1>Organisez les pages de votre site en blocs fonctionnels :</h1>
+        <div>
+            <p class="info">
+            En PHP, nous pouvons facilement insérer d'autres pages. Mais on peut aussi insérer des morceaux de pages, à l'intérieur d'une page.
+            </p>
 
-   <div>
-    <p><code>count()</code> fonction qui retourne la taille du tableau</p>
-    <p>On peut rapidement executer du php dans le console avec la commande <pre>php fichier.php</pre> </p>
-   </div>
+
+            <p>
+                grace à la <code>include</code>
+                <code class="codeBlock">
+                &lsaquo;? php include('path/du/fichier.php'); ?>
+                </code>
+            </p>
+
+
+        </div>
+
+
+        
+
     </div>
 
 
