@@ -16,9 +16,10 @@
         echo '    <li class="list-group-item">pages : '.$pages;
         echo '    <li class="list-group-item ">  ';        
         echo '                <button class="btn btn-outline-warning"data-bs-toggle="modal" data-bs-target="#modify-form'.$id.'" >Modifier</button>';
-        
-        echo '                <button class="btn btn-outline-danger" >supprimer</button>';
-
+        echo '                <form action="include/delete.php" method="post"> ';
+        echo '                <input type="hidden"name="id" value="'.$id.'" /> ';
+        echo '                  <button class="btn btn-outline-danger" >supprimer</button>';
+        echo '                </form>';
         echo '            </li>';
         echo '</ul>';
         echo '</div>';

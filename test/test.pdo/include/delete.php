@@ -11,18 +11,14 @@ include('./test.php');
 
 
 
-$query =  "INSERT INTO livre( tittle, author, sumury, pages, publication) VALUES (:tittle, :author, :sumury, :pages, :publication)";
+$query =  "DELETE FROM livre WHERE id_livre=:id ";
 
 $insertRequest = $mysqlConnection->prepare($query);
 
 $insertRequest->execute
 ([
     
-    'tittle' => $_POST["titre"], 
-    'author' => $_POST["auteur"], 
-    'sumury' => $_POST["sumury"], 
-    'pages'  => $_POST["page"], 
-    'publication' => $_POST["date"],
+    "id" => $_POST["id"]
 
 ]);
 

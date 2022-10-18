@@ -63,6 +63,9 @@
                 Les commentaire s'affiche avec <code>//commentaire</code>
                 commentaire multi-ligne <code>/*commentaire*/</code>
             </p>
+            <p class="note">
+                Pour éviter d’arrêter l’exécution du script par manque de connaissance, et d’afficher une erreur, lorsqu'aucune classe n'est spécifiée, PHP utilisera la classe  stdClass. Par ailleurs, vous pouvez tout à fait instancier cette classe manuellement.
+            </p>
         </div>
         </div>
     </main>
