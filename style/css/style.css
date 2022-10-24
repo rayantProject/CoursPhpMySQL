@@ -1,0 +1,54 @@
+.codeBlock {
+  display: block;
+  white-space: pre-wrap;
+  background-color: black;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.alert {
+  display: block;
+  background-color: #e76f51;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.validation {
+  display: block;
+  color: white;
+  background-color: green;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.note {
+  display: block;
+  color: white;
+  background-color: #264653;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.pre-terminal {
+  display: block;
+  white-space: pre-wrap;
+  background-color: black;
+  padding: 25px;
+  border-radius: 10px;
+  color: white;
+}
+
+.txt-important {
+  color: #E0CA3C;
+}
+
+.note-p {
+  display: block;
+  color: white;
+  background-color: #71677c;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

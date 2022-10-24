@@ -18,11 +18,16 @@ class  HTMLement
     public function __construct(private string $name, private string $content)
     {
     }
+
+    public function __invoke()
+    {
+       echo "<$this->name>$this->content</$this->content>";
+    }
 }
 
 class  Component
 {
-
+     private string $test;
     public function __construct(protected string $name, protected HTMLement $elem)
     {
     }
@@ -38,6 +43,8 @@ class  Component
     }
 
 }
+
+$mySpan =  new HTMLement("span", "my carateristique content");
 
 
 $component = new Component("mycompo", new HTMLement("test", "my test"));
@@ -191,20 +198,66 @@ $component2 = clone $component;
                 <p>
                     resultat:
                     <?php
-                        echo "<div class='note note-primary'><span class=''>resultat : </span><span class='txt-important  bg-black rounded p-1'>$component</span></div>   ";
+                        echo "<div class=' '><span class=''>resultat : </span><span class='txt-important  bg-black rounded p-1'>$component</span></div>   ";
                     ?>
                 </p>
-                <h3><kbd>__invoke</kbd>,  <kbd>__sleep</kbd>  et  <kbd>__wakeup</kbd></h3>
+                <h3><kbd>invoke</kbd>,  <kbd>sleep</kbd>  et  <kbd>wakeup</kbd></h3>
                 <p>
+
+                    <code>__invoke</code> permet d'utiliser la classe comme une FCT
+                    <div>PHP doc:  La méthode <code>__invoke()</code> est appelée lorsqu'un script tente d'appeler un objet comme une fonction.</div>
+
+                </p>
+                <p>
+                    <code class="codeBlock">
+                            //dans la classe HTMLelement
+                        public function __invoke(string $name, string $content)
+                        {
+                            $this->__construct($name, $content);
+
+                        }
+
+                    </code>
 
                 </p>
 
+                <p>
+                    test :
+                    <code class="codeBlock">
+                        $myParagraphe =  new HTMLement("p", "my carateristique content");
+                        //...
+                        $myParagraphe();
 
-                <h3>Les methodes <kbd>__serialize</kbd>,  <kbd>__unserialize</kbd>,  <kbd>__get</kbd>,  <kbd>__set</kbd>,  <kbd>__isset</kbd>,  <kbd>__unset</kbd>  et  <kbd>__call</kbd></h3>
+                    </code>
+                </p>
+                <p class="">
+                    resultat:
+                    <?php
+                        $mySpan();
+                    ?>
+                </p>
+                <h3>Les methodes <kbd>serialize</kbd>,  <kbd>unserialize</kbd>, <kbd>get</kbd>, <kbd>set</kbd>, <kbd>isset</kbd>, <kbd>unset</kbd> et <kbd>call</kbd></h3>
 
 
                 <p>
+                    La méthode magique <code>__get()</code> va s’exécuter si on tente d’accéder à une propriété inaccessible (ou qui n’existe pas)
+                </p>
+                <p>
+                    La méthode magique <code>__set()</code> s’exécute dès qu’on tente de créer ou de mettre à jour une propriété inaccessible (ou qui n’existe pas)
+                </p>
+                <p>
+                    La fonction <code>isset()</code> va servir à déterminer si une variable est définie et si elle est différente de NULL tandis que la fonction <code>empty()</code> permet de déterminer si une variable est vide.
+                </p>
 
+                <p>Finalement, la méthode magique <code>__unset()</code> va s’exécuter lorsque la fonction unset() est appelée sur des propriétés inaccessibles.
+                    La fonction <code>unset()</code> sert à détruire une variable.</p>
+
+                <p>
+                    La méthode magique <code>__call()</code> va être appelée dès qu’on essaie d’utiliser une méthode qui n’existe pas (ou qui est inaccessible) à partir d’un objet
+                </p>
+
+                <p class="note">
+                    FLEMME: Nous n’étudierons pas ici les méthodes magiques __sleep(), __wakeup(), __set_state() et debugInfo() simplement car elles répondent à des besoins très précis et ne vont avoir d’intérêt que dans un contexte et dans un environnement spécifique.
                 </p>
 
             </div>
