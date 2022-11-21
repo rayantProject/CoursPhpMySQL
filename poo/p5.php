@@ -19,7 +19,7 @@
         </h1>
         <div>
             <p>
-                L'hertiage permet d'etre redondant et d'utiliser les memes propriétes pour deux classes diférentes
+                L'hertiage permet de ne pas etre redondant et d'utiliser les memes propriétes pour deux classes diférentes
                 il se fait grace au mots clé <kbd>extend</kbd>
             </p>
 
@@ -85,9 +85,56 @@
 
             </p>
             <p>
+                L’héritage nous permet de passer les propriétés et méthodes d’une classe “parent” à des classes “enfants”.
 
+                Vous pouvez structurer votre code et éviter la duplication en héritant d’une classe.
+
+                L’héritage s’effectue avec l’usage du mot clé   extends  juste après le nom de la classe à étendre, suivi de la classe dont il faut hériter.
             </p>
 
+                <h2>
+                    Accédez aux propriétés de la classe parente
+                </h2>
+            <p>
+                Lorsque vous utilisez l'héritage, depuis l'objet comme depuis la classe, vous pouvez accéder aux propriétés de la classe parente de la même manière qu'avant, avec la flèche   -> , comme vous pouvez le voir à la ligne 22 :
+            </p>
+            <code class="codeBlock">
+                declare(strict_types=1);
+
+                class User
+                {
+                public const STATUS_ACTIVE = 'active';
+                public const STATUS_INACTIVE = 'inactive';
+
+                public function __construct(public string $username, public string $status = self::STATUS_ACTIVE)
+                {
+                }
+                }
+
+                class Admin extends User
+                {
+                // ...
+
+                public function printStatus()
+                {
+                // vous pouvez accéder au statut comme si la propriété appartenait à Admin :)
+                echo $this->status;
+                }
+                }
+
+                $admin = new Admin('Lily');
+                $admin->printStatus();
+
+            </code>
+            <p>
+                La façon d’accéder aux propriétés des classes parentes s’effectue avec la flèche <kbd>-></kbd>.
+
+                <br> La façon d’accéder aux méthodes des classes parentes s’effectue également à l’aide de la flèche <kbd>-></kbd>.
+
+                <br> Lorsqu’il s’agit d’une méthode ou d’une propriété statique parente, l’accès s’effectue avec le mot clé parent.
+
+                <br>Vous pouvez ré-écrire une méthode existante dans un enfant, à condition de respecter sa signature.
+            </p>
         </div>
         </div>
 
